@@ -80,9 +80,9 @@ def calcula_desconto_inss(salario_bruto: float) -> (float, float):
     aliquota = None
     # Calculando o valor de desconto do INSS de acordo com as alíquotas progressivas.
     for faixa_salarial in tabela_inss:
-        if not faixa_salarial.get('teto') and not faixa_salarial['condicao']:
+        if 'teto' not in faixa_salarial and not faixa_salarial['condicao']:
             descontado_inss += faixa_salarial['piso'] * faixa_salarial['aliquota']
-        elif not faixa_salarial.get('teto') and faixa_salarial['condicao']:
+        elif 'teto' not in faixa_salarial and faixa_salarial['condicao']:
             descontado_inss = salario_bruto * faixa_salarial['aliquota']
             aliquota = formata_percentual(faixa_salarial['aliquota'])
             break

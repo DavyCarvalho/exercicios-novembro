@@ -6,7 +6,6 @@
 # considere como regra o poker fechado, em que a mão do jogador, já tem a combinação de 5 cartas :)
 
 ####################################################################################################
-import random
 
 
 class Card:
